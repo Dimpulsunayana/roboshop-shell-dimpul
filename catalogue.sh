@@ -17,7 +17,11 @@ npm install
 cp ${script_location}/files/catalogue.service /etc/systemd/system/catalogue.service
 
 systemctl daemon-reload
-labauto mongodb-client
+
+cp ${script_location}/files/mongodb.repo /etc/yum.repos.d/mongodb.repo
+yum install mongodb-org-shell -y
+#labauto mongodb-client
+
 mongo --host localhost </app/schema/catalogue.js
 
 systemctl enable catalogue

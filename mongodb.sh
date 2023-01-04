@@ -2,7 +2,7 @@
 script_location=$(pwd)
 
 #create reverse proxy conf
-cp ${script_location}/files/mongodb.sh /etc/yum.repos.d/mongo.repo
+cp ${script_location}/files/mongodb.repo /etc/yum.repos.d/mongo.repo
 
 #install mongod server
 yum install mongodb-org -y

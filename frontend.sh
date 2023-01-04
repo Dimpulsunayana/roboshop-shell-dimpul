@@ -13,7 +13,7 @@ cd /usr/share/nginx/html
 unzip /tmp/frontend.zip
 
 #create reverse proxy conf
-cp ${script_location}/files/frontend_conf.sh /etc/nginx/default.d/roboshop.conf
+cp ${script_location}/files/frontend_conf.conf /etc/nginx/default.d/roboshop.conf
 
 #enable and start nginx server
 systemctl enable nginx

@@ -1,23 +1,25 @@
 script_location=$(pwd)
+log=/tmp/roboshop.log
+
 #install nginx server
-yum install nginx -y
-echo -e "\e[34mnginx installed\e[0m"
+yum install nginx -y &>>${log}
+echo -e "\e[35mnginx installed\e[0m"
 
 #Remove default content in nginx webser server is running
-rm -rf /usr/share/nginx/html/*
-echo -e "\e[34mdefault content is removed\e[0m"
+rm -rf /usr/share/nginx/html/* &>>${log}
+echo -e "\e[35mdefault content is removed\e[0m"
 
 #download the roboshop-frontend content
-curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
+curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.zip &>>${log}
 
 #extract the frontend file
 cd /usr/share/nginx/html
-unzip /tmp/frontend.zip
+unzip /tmp/frontend.zip &>>${log}
 
 #create reverse proxy conf
-cp ${script_location}/files/frontend_conf.sh /etc/nginx/default.d/roboshop.conf
+cp ${script_location}/files/frontend_conf.sh /etc/nginx/default.d/roboshop.conf &>>${log}
 
 #enable and start nginx server
-systemctl enable nginx
-systemctl restart nginx
-echo -e "\e[34mnginx restarted\e[0m"
+systemctl enable nginx &>>${log}
+systemctl restart nginx &>>${log}
+echo -e "\e[35mnginx restarted\e[0m"

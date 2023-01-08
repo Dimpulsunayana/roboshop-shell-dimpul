@@ -24,7 +24,7 @@ cp ${script_location}/files/mongodb.repo /etc/yum.repos.d/mongodb.repo
 yum install mongodb-org-shell -y
 #labauto mongodb-client
 
-mongo --host localhost </app/schema/catalogue.js
+mongo --host mongodb-dev.dimpul.online </app/schema/catalogue.js
 
 systemctl enable catalogue
 systemctl start catalogue

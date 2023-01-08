@@ -4,11 +4,11 @@ location /images/ {
   root   /usr/share/nginx/html;
   try_files $uri /images/placeholder.jpg;
 }
-location /api/catalogue/ { proxy_pass http://localhost:8080/; }
-location /api/user/ { proxy_pass http://localhost:8080/; }
-location /api/cart/ { proxy_pass http://localhost:8080/; }
-location /api/shipping/ { proxy_pass http://localhost:8080/; }
-location /api/payment/ { proxy_pass http://localhost:8080/; }
+location /api/catalogue/ { proxy_pass http://catalogue-dev.dimpul.online:8080/; }
+location /api/user/ { proxy_pass http://user-dev.dimpul.online:8080/; }
+location /api/cart/ { proxy_pass http://cart-dev.dimpul.online:8080/; }
+location /api/shipping/ { proxy_pass http://shipping-dev.dimpul.online:8080/; }
+location /api/payment/ { proxy_pass http://payment-dev.dimpul.online:8080/; }
 
 location /health {
   stub_status on;

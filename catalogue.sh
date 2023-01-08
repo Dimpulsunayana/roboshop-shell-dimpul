@@ -27,6 +27,7 @@ fi
 #create a directory called app
 mkdir -p /app &>>${log}
 curl -L -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip &>>${log}
+rm -rf /app/* &>>${log}
 if [ $? -eq 0 ]
 then echo SUCCESS
 else echo Fail

@@ -2,7 +2,7 @@ source files/commonfile.sh
 
 #install nginx server
 yum install nginx -y &>>${log}
-echo -e "\e[35mnginx installed\e[0m"
+print_head "nginx installed"
 status_check
 
 #Remove default content in nginx webser server is running

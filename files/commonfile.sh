@@ -9,5 +9,5 @@ status_check(){
 }
 
 print_head(){
-  echo -e "\e[35m $35 \e[0m"
+  echo -e "\e[35m $1 \e[0m"
 }

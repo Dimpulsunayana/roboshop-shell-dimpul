@@ -1,5 +1,4 @@
-source files/commonfile.sh
-
+source commonfile.sh
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>${log}
 echo -e "\e[35mdownloaded nodejs app\e[0m"
 status_check

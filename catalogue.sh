@@ -10,7 +10,11 @@ print_head "nodejs installed"
 status_check
 
 #create an user
+id roboshop &>>${log}
+if [ $? -ne 0 ]
+then
 useradd roboshop &>>${log}
+fi
 print_head "user created to roboshop"
 status_check
 

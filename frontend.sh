@@ -1,4 +1,4 @@
-source commonfile.sh
+source files/commonfile.sh
 
 #install nginx server
 yum install nginx -y &>>${log}

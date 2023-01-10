@@ -19,10 +19,10 @@ fi
 #create an user
 useradd roboshop &>>${log}
 echo -e "\e[35muser created to roboshop\e[0m"
-if [ $? -eq 0 ]
-then echo SUCCESS
-else echo Fail
-fi
+#if [ $? -eq 0 ]
+#then echo SUCCESS
+#else echo Fail
+#fi
 
 #create a directory called app
 mkdir -p /app &>>${log}

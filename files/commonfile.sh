@@ -7,3 +7,7 @@ status_check(){
   else echo -e "\e[1;31mFAILURE\e[0m"
   fi
 }
+
+print_head(){
+  echo -e "\e[1m \e[0m"
+}

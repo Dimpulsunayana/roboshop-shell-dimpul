@@ -31,12 +31,12 @@ status_check
 
 npm install &>>${log}
 
-systemctl daemon-reload &>>${log}
-
 cp ${script_location}/files/cart.service /etc/systemd/system/cart.service &>>${log}
 print_head "copied cart conf"
 status_check
 #labauto mongodb-client
+
+systemctl daemon-reload &>>${log}
 
 systemctl enable cart &>>${log}
 systemctl start cart &>>${log}

@@ -32,7 +32,10 @@ status_check
 npm install &>>${log}
 
 
-cp ${script_location}/files/mongodb.repo /etc/yum.repos.d/mongo.repo &>>${log}
+cp ${script_location}/files/user.service /etc/systemd/system/user.service &>>${log}
+
+cp ${script_location}/files/mongodb.repo /etc/yum.repos.d/mongodb.repo &>>${LOG}
+
 yum install mongodb-org-shell -y &>>${log}
 print_head "installed mongodb"
 status_check

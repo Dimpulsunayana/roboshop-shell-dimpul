@@ -31,7 +31,6 @@ status_check
 
 npm install &>>${log}
 
-systemctl daemon-reload &>>${log}
 
 cp ${script_location}/files/mongodb.repo /etc/yum.repos.d/mongo.repo &>>${log}
 yum install mongodb-org-shell -y &>>${log}
@@ -39,7 +38,9 @@ print_head "installed mongodb"
 status_check
 #labauto mongodb-client
 
-mongo --host MONGODB-SERVER-IPADDRESS </app/schema/user.js &>>${log}
+systemctl daemon-reload &>>${log}
+
+mongo --host mongodb-dev.dimpul.online </app/schema/user.js &>>${log}
 
 systemctl enable user &>>${log}
 systemctl start user &>>${log}

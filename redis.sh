@@ -17,7 +17,7 @@ status_check
 #sed -stream line editor
 # -e is to verify and -i is proceed to change
 #here its replacing 127.0.0.1 to 0.0.0.0
-sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/redis.conf  &>>${log}
+sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/redis.conf /etc/redis/redis.conf  &>>${log}
 
 systemctl enable redis  &>>${log}
 systemctl restart redis  &>>${log}

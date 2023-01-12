@@ -33,8 +33,12 @@ npm install &>>${log}
 
 
 cp ${script_location}/files/user.service /etc/systemd/system/user.service &>>${log}
+print_head "copied user file"
+status_check
 
 cp ${script_location}/files/mongodb.repo /etc/yum.repos.d/mongodb.repo &>>${LOG}
+print_head "copied mongodb file"
+status_check
 
 yum install mongodb-org-shell -y &>>${log}
 print_head "installed mongodb"

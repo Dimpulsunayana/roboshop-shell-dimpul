@@ -38,7 +38,7 @@ status_check
 
 systemctl daemon-reload &>>${log}
 
-cp ${script_location}/files/mongodb.repo /etc/yum.repos.d/mongodb.repo &>>${LOG}
+cp ${script_location}/files/mongodb.repo /etc/yum.repos.d/mongodb.repo &>>${log}
 print_head "copied mongodb file"
 status_check
 

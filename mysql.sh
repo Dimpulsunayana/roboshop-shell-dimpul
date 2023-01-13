@@ -32,6 +32,6 @@ status_check
 #print_head "root pwd got set"
 #status_check
 
-mysql -uroot -pRoboShop@1 &>>${log}
-print_head "user root pwd got set"
-status_check
+#mysql -uroot -pRoboShop@1 &>>${log}
+#print_head "user root pwd got set"
+#status_check
